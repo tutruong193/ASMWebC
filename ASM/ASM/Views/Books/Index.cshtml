@@ -1,65 +1,55 @@
 ﻿@model ASM.Models.Book;
 @{
-    ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<style>
-    .list-product {
-        width: 1200px;
-        margin: auto;
-        display: flex;
-        flex-wrap: wrap;
-    }
+<body>
+	<section>
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-3">
+					<div class="left-sidebar">
+						<h2>Category</h2>
+						<div class="panel-group category-products" id="accordian"><!--category-productsr-->
+						{{#each theloai }}
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title"><a href="/product/{{theloai}}">{{theloai}}</a></h4>
+								</div>
+							</div>
+						{{/each}}
+						</div><!--/category-productsr-->
+					</div>
+				</div>
 
-    .product {
-        margin-top: 10px;
-        margin-right: 10px;
-        width: 120px;
-        height: 200px;
-    }
-
-    img {
-        width: 100px;
-        height: 100px;
-        display: block;
-        margin: auto;
-    }
-
-    .title {
-        display: block;
-        font-size: 15px;
-        font-weight: bold;
-        text-align: center;
-    }
-
-    .viewProduct, .addProduct {
-        width: calc((100% - 2px) / 2);
-        display: inline-block;
-        float: left;
-        padding: 2px;
-        font-size: 12px;
-        box-sizing: border-box;
-        color: #fff;
-        background: #808080;
-        text-decoration: none;
-        text-align: center;
-    }
-
-    .addProduct {
-        margin-left: 2px;
-    }
-</style>
-
-<div class="list-product">
-    @foreach (var item in ViewBag.book)
-    {
-        <div class="product">
-            <img src="@item.Image" class="img-responsive" />
-            <span class="title">@item.Title</span>
-            <a href="" class="viewProduct">View</a>
-        </div>
-    }
-
-
-</div>
+				<div class="col-sm-9 padding-right">
+					<div class="features_items"><!--features_items-->
+						<h2 class="title text-center">Features Items</h2>
+						<p class="title text-center">{{thongbao}}</p>
+						@foreach (var item in ViewBag.book){
+						<div class="col-sm-4">
+							<div class="product-image-wrapper">
+								<div class="single-products">
+									<div class="productinfo text-center">
+											<img src="@item.Image" alt="" />
+										<h2>@item.Title</h2>
+										<p>@item.Price</p>
+									</div>
+									<div class="product-overlay">
+										<div class="overlay-content">
+												<h2>@item.Title</h2>
+											<p>@item.Price</p>
+											<a asp-action="Details" asp-route-id="@item.BookID" class="btn btn-default add-to-cart"><i
+													class="fa fa-shopping-cart"></i>View details</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					}
+					</div><!--features_items-->
+				</div>
+			</div>
+		</div>
+	</section>
+</body>

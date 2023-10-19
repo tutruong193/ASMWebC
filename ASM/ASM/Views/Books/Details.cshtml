@@ -1,0 +1,52 @@
+﻿
+
+@model ASM.Models.Book;
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 padding-right">
+                <div class="product-details">
+                    <!--product-details-->
+                    <div class="col-sm-5">
+                        <div class="view-product">
+                            <img src="@Model.Image" alt="" />
+                        </div>
+                    </div>
+                    <div class="col-sm-7">
+                        <div class="product-information">
+                            <!--/product-information-->
+                            <h2>@Model.Title</h2>
+                            <p>So luong trong kho: @Model.Quantity</p>
+                            <span>
+                                <span>US $@Model.Price</span>
+                                <label>Quantity:</label>
+                                <input id="quantityInput" type="number" value="1" min="1" max="@Model.Quantity" />
+                                <!-- <form action="/addtocart/{{toys._id}}" method="post">
+                                     <button type="submit" class="btn btn-fefault cart"
+                                             onclick="copyQuantityValue()">
+                                         <input type="hidden" value="{{toys.ten}}" name="ten">
+                                         <input type="hidden" name="anh" value="{{toys.anh}}">
+                                         <input type="hidden" name="gia" value="{{toys.gia}}">
+                                         <input id="hiddenInput" type="hidden" name="soluong" value="">
+                                         <i class="fa fa-shopping-cart"></i>
+                                         Add to cart
+                                     </button>
+                                 </form>-->
+                            </span>
+                            <p><b>Availability:</b> In Stock</p>
+                            <p><b>Condition:</b> New</p>
+                            <a href="">
+                                <img src="images/product-details/share.png" class="share img-responsive"
+                                     alt="" />
+                            </a>
+                        </div><!--/product-information-->
+                    </div>
+                </div><!--/product-details-->
+            </div>
+        </div>
+    </div>
+</section>
+

@@ -25,5 +25,11 @@ namespace ASM.Controllers
         {
             return _db.Book.ToList();
         }
+        //GET DETAIL PRODUCT
+        public ActionResult Details(int id)
+        {
+            var book = _db.Book.Find(id);
+            return View(book);
+        }
     }
 }
