@@ -1,0 +1,65 @@
+﻿@model ASM.Models.Book;
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .list-product {
+        width: 1200px;
+        margin: auto;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .product {
+        margin-top: 10px;
+        margin-right: 10px;
+        width: 120px;
+        height: 200px;
+    }
+
+    img {
+        width: 100px;
+        height: 100px;
+        display: block;
+        margin: auto;
+    }
+
+    .title {
+        display: block;
+        font-size: 15px;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    .viewProduct, .addProduct {
+        width: calc((100% - 2px) / 2);
+        display: inline-block;
+        float: left;
+        padding: 2px;
+        font-size: 12px;
+        box-sizing: border-box;
+        color: #fff;
+        background: #808080;
+        text-decoration: none;
+        text-align: center;
+    }
+
+    .addProduct {
+        margin-left: 2px;
+    }
+</style>
+
+<div class="list-product">
+    @foreach (var item in ViewBag.book)
+    {
+        <div class="product">
+            <img src="@item.Image" class="img-responsive" />
+            <span class="title">@item.Title</span>
+            <a href="" class="viewProduct">View</a>
+        </div>
+    }
+
+
+</div>
