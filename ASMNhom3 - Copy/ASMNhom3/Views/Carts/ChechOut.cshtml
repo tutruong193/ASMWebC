@@ -1,0 +1,110 @@
+﻿
+<section id="cart_items">
+    <div class="container">
+        <div class="breadcrumbs">
+            <ol class="breadcrumb">
+                <li><a href="#">Home</a></li>
+                <li class="active">Check out</li>
+            </ol>
+        </div><!--/breadcrums-->
+
+        <div class="step-one">
+            <h2 class="heading">PAYMENT PROCESS</h2>
+        </div>
+
+        <div class="shopper-informations" style="text-align: center;">
+            <div class="row">
+                <div class="col-sm-3"></div>
+                <div class="col-sm-6">
+                    <div style="text-align: center;">
+                        <div class="shopper-info">
+                            <p>Shopper Information</p>
+                            <form method="POST" action="/checkoutprocess">
+                                <input style="width: 500px" type="text" placeholder="FirstName"
+                                       value="@ViewBag.user.FirstName">
+                                <input style="width: 500px" type="text" placeholder="LastName"
+                                       value="@ViewBag.user.LastName">
+                                <input style="width: 500px" type="email" placeholder="Email"
+                                       value="@ViewBag.user.Email">
+                                <input style="width: 500px" type="text" placeholder="PhoneNumber"
+                                       value="@ViewBag.user.PhoneNumber">
+                                <input style="width: 500px" type="text" placeholder="Address"
+                                       value="@ViewBag.user.Address">
+                                <input style="width: 500px" type="text" placeholder="Note" name="note"><br>
+                                <button type="submit" class="btn btn-primary" onclick="return confirm('Comfirm all the product and information? ')">Continue</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3"></div>
+            </div>
+        </div>
+        <div class="review-payment">
+            <h2>Review & Payment</h2>
+        </div>
+
+        <div class="table-responsive cart_info">
+            <table class="table table-condensed">
+                <thead>
+                    <tr class="cart_menu">
+                        <td class="image">Item</td>
+                        <td class="description">Name</td>
+                        <td class="price">Price</td>
+                        <td class="quantity">Quantity</td>
+                        <td></td>
+                    </tr>
+                </thead>
+                    <tbody>
+                        @for (int i = 0; i < ViewBag.product.Count; i++)
+                        {
+                            var item = ViewBag.product[i];
+                            <tr>
+                                <td class="cart_product">
+                                    <a href="#"><img src="@item.Book.Image" alt="" width="150px"></a>
+                                </td>
+                                <td class="cart_description">
+                                    <h4>@item.Book.Title</h4>
+                                    <input type="hidden" name="ten" value="@item.Book.Title">
+                                </td>
+                                <td class="cart_price">
+                                    <p>$@item.Book.Price</p>
+                                    <input type="hidden" name="gia" value="@item.Book.Price">
+                                </td>
+                                <td class="cart_quantity">
+                                    <div class="cart_quantity_button">
+                                        <input class="cart_quantity_input" type="text" name="soluong" value="@item.Quanlity" autocomplete="off" size="2">
+                                    </div>
+                                </td>
+                                <td class="cart_delete">
+                                    <a class ="cart_quantity_delete" asp-controller="Carts" asp-action="addCart" asp-route-id="@item.CartID" class="btn btn-fefault cart"><i class="fa fa-times"></i></a>
+                                </td>
+                            </tr>
+                        }
+                        <tr>
+                            <td colspan="3">&nbsp;</td>
+                            <td colspan="2">
+                               @* <table class="table table-condensed total-result">
+                                    <tr>
+                                        <td>Cart Sub Total</td>
+                                        <td>${{tongtien}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Product Total</td>
+                                        <td>{{tongsoluong}}</td>
+                                    </tr>
+                                    <tr class="shipping-cost">
+                                        <td>Shipping Cost</td>
+                                        <td>Free</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Total</td>
+                                        <td><span>${{tongtien}}</span></td>
+                                    </tr>
+                                </table>*@
+                            </td>
+                        </tr>
+                    </tbody>
+            </table>
+        </div>
+    </div>
+</section>
