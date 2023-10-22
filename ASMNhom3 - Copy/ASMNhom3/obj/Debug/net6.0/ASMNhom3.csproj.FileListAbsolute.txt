@@ -504,3 +504,4 @@ E:\study\webc\ASMWebC\ASMNhom3 - Copy\ASMNhom3\obj\Debug\net6.0\scopedcss\projec
 E:\study\webc\ASMWebC\ASMNhom3 - Copy\ASMNhom3\obj\Debug\net6.0\ASMNhom3.csproj.CopyComplete
 E:\study\webc\ASMWebC\ASMNhom3 - Copy\ASMNhom3\obj\Debug\net6.0\ASMNhom3.genruntimeconfig.cache
 E:\study\webc\ASMWebC\ASMNhom3 - Copy\ASMNhom3\obj\Debug\net6.0\ref\ASMNhom3.dll
+E:\study\webc\ASMWebC\ASMNhom3 - Copy\ASMNhom3\obj\Debug\net6.0\scopedcss\Views\Shared\_Layoutmanage.cshtml.rz.scp.css

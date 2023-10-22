@@ -8,7 +8,7 @@
 {
     <li>
         <a asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello @User.Identity?.Name!</a>
-        <a href="/carts/cartlist"><i class="fa fa-shopping-cart"></i> Cart</a>
+        <a href="/listcart"><i class="fa fa-shopping-cart"></i> Cart</a>
     </li>
     <li>
         <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">

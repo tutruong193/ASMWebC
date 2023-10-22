@@ -24,6 +24,8 @@ public class ASMNhom3Context : IdentityDbContext<ManageUser>
     public DbSet<Book> Books { get; set; }
     public DbSet<Category> Categorys { get; set; }
     public DbSet<Cart> Carts { get; set; }
+    public DbSet<QueueCheckOut> QueueCheckOuts { get; set; }
+    public DbSet<History> Histories { get; set; }
 }
 public class ApplicationUserEntityConfiguration : IEntityTypeConfiguration<ManageUser>
 {
